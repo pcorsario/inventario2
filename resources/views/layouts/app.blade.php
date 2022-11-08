@@ -36,9 +36,7 @@
 					@auth()
                     <ul class="navbar-nav mr-auto">
 						<!--Nav Bar Hooks - Do not delete!!-->
-						<li class="nav-item">
-                            <a href="{{ url('/sginventarios') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Sginventarios</a> 
-                        </li>
+					
 						<li class="nav-item">
                             <a href="{{ url('/inventarios') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Inventarios</a> 
                         </li>
