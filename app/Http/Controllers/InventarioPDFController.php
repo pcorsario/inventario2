@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Sede;
 use App\Models\Departamento;
-use App\Models\Inventario;
+use App\Models\inventario;
 use App\Models\Condicion;
 use PDF;
 use Illuminate\Support\Facades\DB;
