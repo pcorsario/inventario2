@@ -39,6 +39,7 @@ Route::group(['middleware'=>['auth']],function(){
 });
 
 //Route Hooks - Do not delete//
+	Route::view('sginventarios', 'livewire.sginventarios.index')->middleware('auth');
 	Route::view('inventarios', 'livewire.inventarios.index')->middleware('auth')->name('inventarios');
 	Route::view('plantas', 'livewire.plantas.index')->middleware('auth')->name('plantas');
 	Route::view('sedes', 'livewire.sedes.index')->middleware('auth')->name('sedes');

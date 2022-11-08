@@ -4,7 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use Livewire\WithPagination;
-use App\Models\Inventario;
+use App\Models\inventario;
 use App\Models\Producto;
 use App\Models\Condicion;
 use App\Models\Sede;
@@ -88,7 +88,7 @@ class Inventarios extends Component
         
         $this->resetInput();
 		$this->emit('closeModal');
-		session()->flash('message', 'Inventario Guardado 123.');
+		session()->flash('message', 'Inventario Guardado 1234.');
     }
 
     public function edit($id)
@@ -133,7 +133,7 @@ class Inventarios extends Component
 
             $this->resetInput();
             $this->updateMode = false;
-			session()->flash('message', 'Inventario Successfully updated.');
+			session()->flash('message', 'Inventario Actualizado.');
         }
     }
 
