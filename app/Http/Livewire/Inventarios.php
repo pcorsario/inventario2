@@ -88,7 +88,7 @@ class Inventarios extends Component
         
         $this->resetInput();
 		$this->emit('closeModal');
-		session()->flash('message', 'Inventario Guardado.');
+		session()->flash('message', 'Inventario Guardado 123.');
     }
 
     public function edit($id)
