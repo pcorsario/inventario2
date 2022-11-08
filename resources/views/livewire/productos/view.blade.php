@@ -58,7 +58,9 @@
 								<td>{{ $row->precio }}</td>
 								@endcan
 								<td>{{ $row->caracteristicas }}</td>
-								<td>{{ $row->categoria->nombre_categoria}}</td>
+								<td>
+									categorias
+								</td>
 								@can('crear-producto')
 								<td width="90">
 								<div class="btn-group">
