@@ -67,10 +67,11 @@ class Inventarios extends Component
 
     public function store()
     {
+		$cantidad=1;
         $this->validate([
 		'fecha_inventario' => 'required',
 		'hora_inventario' => 'required',
-		'cantidad' => 'required',
+		// 'cantidad' => 'required',
         ]);
 
         Inventario::create([ 
@@ -82,12 +83,12 @@ class Inventarios extends Component
 			'planta_id' => $this-> planta_id,
 			'departamento_id' => $this-> departamento_id,
 			'user_id' => $this-> user_id,
-			'cantidad' => $this-> cantidad
+			'cantidad' => 1
         ]);
         
         $this->resetInput();
 		$this->emit('closeModal');
-		session()->flash('message', 'Inventario Successfully created.');
+		session()->flash('message', 'Inventario Guardado.');
     }
 
     public function edit($id)
@@ -127,7 +128,7 @@ class Inventarios extends Component
 			'planta_id' => $this-> planta_id,
 			'departamento_id' => $this-> departamento_id,
 			'user_id' => $this-> user_id,
-			'cantidad' => $this-> cantidad
+			'cantidad' => 1
             ]);
 
             $this->resetInput();

@@ -80,7 +80,7 @@
             </div>
             <div class="form-group">
                 <label for="cantidad"></label>
-                <input hidden="true" wire:model="cantidad" type="text" class="form-control" id="cantidad" placeholder="Cantidad">@error('cantidad') <span class="error text-danger">{{ $message }}</span> @enderror
+                <input hidden="false" wire:model="cantidad" type="text" class="form-control" id="cantidad" placeholder="Cantidad">@error('cantidad') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
 
                 </form>
