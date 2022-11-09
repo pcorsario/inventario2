@@ -15,15 +15,15 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::create([
-            'name'=>'Patricio Vaca Escobar',
-            'email'=>'pvaca@itsjapon.edu.ec',
-            'cedula'=>'1718102815',
+            'name'=>'Rolando Castro',
+            'email'=>'racastrog@itsjapon.edu.ec',
+            'cedula'=>'1719420968',
             'password'=>bcrypt('12341234')
         ])->assignRole('Administrador');
         User::create([
-            'name'=>'Rolando Castro',
-            'email'=>'rcastro@itsjapon.edu.ec',
-            'cedula'=>'1723146419',
+            'name'=>'Daniel Cabrera',
+            'email'=>'dcabrera@itsjapon.edu.ec',
+            'cedula'=>'1718172615',
             'password'=>bcrypt('12341234')
         ])->assignRole('Directivo');
         // User::factory(9)->create();

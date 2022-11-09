@@ -27,7 +27,7 @@ class AuthServiceProvider extends ServiceProvider
 
         //
         Gate::before(function ($user,$ability){
-            return $user->email== 'pvaca@itsjapon.edu.ec' ? true : null;
+            return $user->email== 'racastrog@itsjapon.edu.ec' ? true : null;
         });
     }
 }
