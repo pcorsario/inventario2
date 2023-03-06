@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreinventarioRequest;
@@ -18,7 +17,7 @@ class InventarioController extends Controller
     public function index()
     {
         $sedes='Quito y Santo Domingo';
-        // dd($sedes);
+        dd($sedes);
         $departamentos='todos';
         $estados='todos';
         $inventarios=inventario::all();
