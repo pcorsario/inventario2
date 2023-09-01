@@ -87,7 +87,7 @@
 								<td>{{ $row->producto->codigo_producto}}</td>
 								<td>{{ $row->producto->nombre_producto}}</td>
                                 <td>{{ $row->planta->nom_planta }}</td>							
-								<td>{{ $row->departamento->nombre_departamento }}</td>
+								<td>{{ $row->departamento->nombre_departamento ?? '' }}</td>
                                 <td>{{ $row->condicion->condicion }}</td>
 								</tr>
 							

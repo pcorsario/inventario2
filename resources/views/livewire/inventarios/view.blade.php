@@ -16,7 +16,7 @@
 						<div wire:poll.4s class="btn btn-sm btn-success" style="margin-top:0px; margin-bottom:0px;"> {{ session('message') }} </div>
 						@endif
 						<div>
-							<input wire:model='keyWord' type="text" class="form-control" name="search" id="search" placeholder="Search Inventarios">
+							<input wire:model='keyWord' type="text" class="form-control" name="search" id="search" placeholder="Buscar por ID">
 						</div>
 						<div class="btn-group">
 								
@@ -60,7 +60,7 @@
 								<td>{{ $row->condicion->condicion }}</td>
 								<td>{{ $row->sede->nom_sede }}</td>
 								<td>{{ $row->planta->nom_planta }}</td>
-								<td>{{ $row->departamento->nombre_departamento }}</td>
+								<td>{{ $row->departamento->nombre_departamento ?? '' }}</td>
 								<td>{{ $row->user->name }}</td>
 							
 								<td width="90">

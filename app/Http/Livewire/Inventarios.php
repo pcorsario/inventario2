@@ -24,28 +24,36 @@ class Inventarios extends Component
 
     public function render()
     {
-		$productos=Producto::all();
-		$condicions=Condicion::all();
-		$sedes=Sede::all();
-		$plantas=Planta::all();
-		$departamentos=Departamento::all();
-		$users=User::all();
-		$keyWord = '%'.$this->keyWord .'%';
+        $productos = Producto::all();
+        $condicions = Condicion::all();
+        $sedes = Sede::all();
+        $plantas = Planta::all();
+        $departamentos = Departamento::all();
+        $users = User::all();
+        $keyWord = '%' . $this->keyWord . '%';
+
+        $inventarios = Inventario::latest()
+            ->where(function ($query) use ($keyWord) {
+                $query->orWhere('fecha_inventario', 'LIKE', $keyWord)
+                    ->orWhere('hora_inventario', 'LIKE', $keyWord)
+                    ->orWhere('cantidad', 'LIKE', $keyWord);
+            })
+            ->orWhereHas('producto', function ($query) use ($keyWord) {
+                $query->where('nombre_producto', 'LIKE', $keyWord);
+            })
+            ->orWhere('producto_id', 'LIKE', $keyWord)
+            ->orWhere('condicion_id', 'LIKE', $keyWord)
+            ->orWhere('sede_id', 'LIKE', $keyWord)
+            ->orWhere('planta_id', 'LIKE', $keyWord)
+            ->orWhere('departamento_id', 'LIKE', $keyWord)
+            ->orWhere('user_id', 'LIKE', $keyWord)
+            ->paginate(10);
+
         return view('livewire.inventarios.view', [
-            'inventarios' => Inventario::latest()
-						->orWhere('fecha_inventario', 'LIKE', $keyWord)
-						->orWhere('hora_inventario', 'LIKE', $keyWord)
-						->orWhere('producto_id', 'LIKE', $keyWord)
-						->orWhere('condicion_id', 'LIKE', $keyWord)
-						->orWhere('sede_id', 'LIKE', $keyWord)
-						->orWhere('planta_id', 'LIKE', $keyWord)
-						->orWhere('departamento_id', 'LIKE', $keyWord)
-						->orWhere('user_id', 'LIKE', $keyWord)
-						->orWhere('cantidad', 'LIKE', $keyWord)
-						->paginate(10),
-        ],compact('productos','condicions','sedes','plantas','departamentos','users'));
+            'inventarios' => $inventarios,
+        ], compact('productos', 'condicions', 'sedes', 'plantas', 'departamentos', 'users'));
     }
-	
+
     public function cancel()
     {
         $this->resetInput();

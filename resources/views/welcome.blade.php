@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', __('Welcome'))
+@section('title', __('ITSJ'))
 @section('content')
 <div class="container" style="background-image: url('{{ asset('images/foto.jpg')}}'); width: 100%; height: 100vh; ">
 <div class="row justify-content-center">
@@ -11,7 +11,7 @@
             @guest
 				
 				
-			SISTEMA DE GESTION DE INVENTARIO DEL INSTITUTO SUPERIOR TECNOLOGICO JAPÓN
+			SISTEMA DE GESTION DE INVENTARIO DEL INSTITUTO SUPERIOR TECNOLOGICO JAPÓN ROLANDO CASTRO
                 
 			@else
 					Hi {{ Auth::user()->name }}, Welcome back to {{ config('app.name', 'Laravel') }}.
